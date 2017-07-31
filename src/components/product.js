@@ -3,7 +3,6 @@ import React from 'react';
 export default function Product(props) {
   const productContainer = {
     display: 'flex',
-    maxWidth: '200px',
   }
   return (
     <div style={productContainer}>
