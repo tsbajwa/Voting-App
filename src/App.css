@@ -1,0 +1,29 @@
+.product {
+  display: flex;
+  align-items: center; }
+
+.product-upvote {
+  padding-bottom: 10px; }
+  .product-upvote__img {
+    height: auto;
+    width: 25px; }
+
+.product-info {
+  padding: 10px 0px 0px 20px; }
+  .product-info p {
+    margin: 0px; }
+
+.product-img__img {
+  height: auto;
+  width: 175px; }
+
+.product-author {
+  display: flex;
+  align-items: center;
+  padding-top: 15px; }
+  .product-author__img {
+    height: 35px;
+    width: 35px;
+    border-radius: 500rem; }
+  .product-author span {
+    margin-right: 8px; }

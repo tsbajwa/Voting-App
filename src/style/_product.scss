@@ -1,0 +1,38 @@
+.product {
+  display: flex;
+  align-items: center;
+}
+
+.product-upvote {
+  padding-bottom: 10px;
+  &__img {
+    height: auto;
+    width: 25px;
+  }
+}
+.product-info {
+  padding: 10px 0px 0px 20px;
+  p {
+    margin: 0px;
+  }
+}
+.product-img {
+  &__img {
+    height: auto;
+    width: 175px;
+  }
+}
+
+.product-author {
+  display: flex;
+  align-items: center;
+  padding-top: 15px;
+  &__img {
+    height: 35px;
+    width: 35px;
+    border-radius: 500rem;
+  }
+  span {
+    margin-right: 8px;
+  }
+}
