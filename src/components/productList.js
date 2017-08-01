@@ -3,12 +3,10 @@ import Product from './product';
 import data from '../seed';
 
 export default class ProductList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+  state = {
       products: [],
     }
-  }
+
 
   componentDidMount() {
     this.setState({products: data()})
@@ -16,16 +14,14 @@ export default class ProductList extends React.Component {
   handleClick = (id) => {
     const nextProducts = this.state.products.map((product) => {
       if (id === product.id) {
-        return Object.assign({}, product, {votes: product.votes + 1 })
+        return Object.assign({}, product, {votes: product.votes + 1 });
       } else {
-        return product
+        return product;
       }
     })
-    this.setState({products: nextProducts})
+    this.setState({products: nextProducts,})
   }
  
-  
-
   render() {
     const productData = this.state.products.slice();
     const products = productData.sort((a,b) => b.votes - a.votes)
@@ -41,7 +37,7 @@ export default class ProductList extends React.Component {
       id={product.id}
       />))
     return (
-      <div>
+      <div className='productList'>
         {productList}
       </div>
      )
