@@ -8,7 +8,7 @@ export default function Product(props) {
       </div>
       <div className='product-info'>
         <div className='product-upvote'>
-          <img onClick={() => props.onClick(props.id)} className='product-upvote__img'src={require('../assets/upvote.png')} alt='vote up'></img><span>{props.vote}</span>
+          <img onClick={() => props.onClick(props.id)} className='product-upvote__img'src={require('../assets/upvote.png')} alt='vote up'></img><span className='product-upvote__span'>{props.vote}</span>
         </div>
         <a href={props.productUrl}>{props.title}</a>
         <p>{props.description}</p>

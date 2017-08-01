@@ -5,10 +5,16 @@
 }
 
 .product-upvote {
+  display: flex;
+  align-items: center;
   padding-bottom: 10px;
   &__img {
     height: auto;
     width: 25px;
+  }
+  &__span {
+    padding-left: 5px;
+    font-size: 1.2em;
   }
 }
 .product-info {
