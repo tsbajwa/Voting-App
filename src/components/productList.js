@@ -6,28 +6,44 @@ export default class ProductList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: data(),
-      loading: true,
-      vote: 0,
+      products: [],
     }
   }
 
-  handleClick = () => {
-    this.setState((prevState) => ({vote: prevState.vote + 1}))
+  componentDidMount() {
+    this.setState({products: data()})
   }
+  handleClick = (id) => {
+    const nextProducts = this.state.products.map((product) => {
+      if (id === product.id) {
+        return Object.assign({}, product, {votes: product.votes + 1 })
+      } else {
+        return product
+      }
+    })
+    this.setState({products: nextProducts})
+  }
+ 
   
 
   render() {
-    return (
-      <Product 
-      title={this.state.data[0].title}
-      description={this.state.data[0].description}
-      productUrl={this.state.data[0].url}
-      vote={this.state.vote}
-      avatar={this.state.data[0].submitterAvatarUrl}
-      productImageUrl={this.state.data[0].productImageUrl}
+    const productData = this.state.products.slice();
+    const products = productData.sort((a,b) => b.votes - a.votes)
+    const productList = products.map((product) => (<Product 
+      title={product.title}
+      description={product.description}
+      productUrl={product.url}
+      vote={product.votes}
+      avatar={product.submitterAvatarUrl}
+      productImageUrl={product.productImageUrl}
       onClick={this.handleClick}
-      />
-    )
+      key={product.id}
+      id={product.id}
+      />))
+    return (
+      <div>
+        {productList}
+      </div>
+     )
   }
 }

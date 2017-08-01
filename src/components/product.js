@@ -1,7 +1,6 @@
 import React from 'react';
 
 export default function Product(props) {
-  console.log(props)
   return (
     <div className='product'>
       <div className='product-img'>
@@ -9,7 +8,7 @@ export default function Product(props) {
       </div>
       <div className='product-info'>
         <div className='product-upvote'>
-          <img onClick={props.onClick} className='product-upvote__img'src={require('../assets/upvote.png')} alt='vote up'></img><span>{props.vote}</span>
+          <img onClick={() => props.onClick(props.id)} className='product-upvote__img'src={require('../assets/upvote.png')} alt='vote up'></img><span>{props.vote}</span>
         </div>
         <a href={props.productUrl}>{props.title}</a>
         <p>{props.description}</p>
